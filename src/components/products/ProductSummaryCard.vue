@@ -4,7 +4,7 @@
     <h5 class="price">Price: ${{ product.price.toFixed(2) }}</h5>
     <p class="description">Description: {{ description }}</p>
     <p class="text-muted">{{ product.category }}</p>
-    <button class="view-product-button">View</button>
+    <button class="view-product-button" @click="$emit('view-product', product)">View Product</button>
   </div>
 </template>
 
@@ -28,6 +28,7 @@ export default {
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 5px gray;
+
   h5.price{
     color: gray;
   }
@@ -47,10 +48,12 @@ export default {
     cursor: pointer;
   }
 }
+
 @media (min-width: 500px) {
   .card{
     width: 350px;
     margin: 10px;
   }
 }
-</style> 
+
+</style>
